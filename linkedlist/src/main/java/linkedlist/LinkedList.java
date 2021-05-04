@@ -74,10 +74,15 @@ public class LinkedList {
 
     public void delete(int data) {
         int index = this.contains(data);
-        if (index != -1) {
+
+        if (index == 0) {
+            this.head = this.head.getNext();
+        }
+
+        if (index > 0) {
             Node previous = this.head;
 
-            while (index > 1) {
+            while (index > 1 && previous.getNext() != null) {
                 previous = previous.getNext();
                 index--;
             }
