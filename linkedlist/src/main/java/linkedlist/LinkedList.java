@@ -24,4 +24,33 @@ public class LinkedList {
             curr.setNext(new Node(data));
         }
     }
+
+    public Node getFirst() {
+        return this.head;
+    }
+
+    public Node getLast() {
+        if (this.head == null || this.head.getNext() == null) {
+            return this.head;
+        } else {
+            Node curr = head.getNext();
+            while (curr.getNext() != null) {
+                curr = curr.getNext();
+            }
+            return curr;
+        }
+    }
+
+    public Node get(int n) {
+        Node current = this.head;
+        while (n > 0 && current != null) {
+            current = current.getNext();
+            n--;
+        }
+        if (current != null) {
+            return current;
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+    }
 }

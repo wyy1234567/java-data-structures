@@ -1,4 +1,0 @@
-linkedlist/NodeTest.java
- linkedlist.NodeTest
-linkedlist/LinkedListTest.java
- linkedlist.LinkedListTest

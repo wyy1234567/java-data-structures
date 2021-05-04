@@ -36,7 +36,46 @@ class LinkedListTest {
         assertEquals(expected.getData(), actual.getData());
     }
 
+    @Test
+    @DisplayName("Can return first item in linked list")
+    void getFirst_returnsFirstItemInList() {
+        linkedlist.add(5);
+        Node expected = linkedlist.getHead();
+        Node actual = linkedlist.getFirst();
+        assertEquals(expected, actual);
+    }
 
+    @Test
+    @DisplayName("Can return last item in linked list")
+    void getLast_returnsLastItemInList() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        int expected = 10;
+        int actual = linkedlist.getLast().getData();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Can return nth item in linked list")
+    void get_returnsNthItemInList() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        linkedlist.add(15);
+        int expected = 10;
+        int actual = linkedlist.get(1).getData();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Throws IndexOutOfBounds exception if N > length of list")
+    void get_throwsIndexOutOfBoundsException_whenNGreaterThanLength() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        linkedlist.add(15);
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            linkedlist.get(4);
+        });
+    }
 
 
 
