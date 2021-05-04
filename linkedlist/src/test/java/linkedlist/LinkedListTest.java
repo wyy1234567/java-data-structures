@@ -77,6 +77,27 @@ class LinkedListTest {
         });
     }
 
+    @Test
+    @DisplayName("Should return index of object if it exist in the list")
+    void contains_shouldReturnIndexOfObject() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        linkedlist.add(15);
+        int expected = 1;
+        int actual = linkedlist.contains(10);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Should return -1 of object if doesn't exist in the list")
+    void contains_shouldReturnNegativeOneIfNotContainsObject() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        linkedlist.add(15);
+        int expected = -1;
+        int actual = linkedlist.contains(20);
+        assertEquals(expected, actual);
+    }
 
 
 }

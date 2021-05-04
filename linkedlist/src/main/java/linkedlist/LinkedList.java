@@ -53,4 +53,22 @@ public class LinkedList {
             throw new IndexOutOfBoundsException();
         }
     }
+
+    public int contains(int data) {
+        if (head == null) {
+            return -1;
+        }
+
+        Node curr = head;
+        int index = 0;
+
+        while (curr.getNext() != null) {
+            if (curr.getData() == data) {
+                return index;
+            }
+            curr = curr.getNext();
+            index++;
+        }
+        return -1;
+    }
 }
