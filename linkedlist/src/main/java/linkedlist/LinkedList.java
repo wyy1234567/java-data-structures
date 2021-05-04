@@ -71,4 +71,38 @@ public class LinkedList {
         }
         return -1;
     }
+
+    public void delete(int data) {
+        int index = this.contains(data);
+        if (index != -1) {
+            Node previous = this.head;
+
+            while (index > 1) {
+                previous = previous.getNext();
+                index--;
+            }
+            previous.setNext(previous.getNext().getNext());
+        }
+    }
+
+    public void deleteByIndex(int index) {
+        if (index == 0) {
+            this.head = this.head.getNext();
+        }
+
+        if (index > 0) {
+            Node previous = this.head;
+
+            while (index > 1 && previous.getNext() != null) {
+                previous = previous.getNext();
+                index--;
+            }
+            if (index == 1) {
+                previous.setNext(previous.getNext().getNext());
+            } else {
+                throw new IndexOutOfBoundsException();
+            }
+        }
+
+    }
 }

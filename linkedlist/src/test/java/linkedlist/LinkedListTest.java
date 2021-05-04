@@ -99,5 +99,40 @@ class LinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("Should delete an object that exists in the list")
+    void delete_deletesByValue() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        linkedlist.add(15);
+        linkedlist.delete(10);
+        int expected = -1;
+        int actual = linkedlist.contains(10);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Given an index, should delete an object that exists in the list")
+    void deleteByIndex_deletesByIndex() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        linkedlist.add(15);
+        linkedlist.deleteByIndex(1);
+        int expected = -1;
+        int actual = linkedlist.contains(10);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Throws IndexOutOfBounds exception if index > length of list")
+    void deleteByIndex_throwsIndexOutOfBoundsException_whenIndexGreaterThanLength() {
+        linkedlist.add(5);
+        linkedlist.add(10);
+        linkedlist.add(15);
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            linkedlist.deleteByIndex(4);
+        });
+    }
+
 
 }
