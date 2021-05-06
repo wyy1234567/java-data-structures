@@ -1,2 +1,4 @@
+stack/StackTest.java
+ stack.StackTest
 queue/QueueTest.java
  queue.QueueTest

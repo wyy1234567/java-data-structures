@@ -1,3 +1,6 @@
 queue/Queue.java
  queue.Queue
  queue.Queue$QueueNode
+stack/Stack.java
+ stack.Stack
+ stack.Stack$StackNode
