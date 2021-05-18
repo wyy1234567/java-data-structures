@@ -2,3 +2,5 @@ sortings/QuickSortTest.java
  sortings.QuickSortTest
 sortings/MergeSortTest.java
  sortings.MergeSortTest
+sortings/BubbleSortTest.java
+ sortings.BubbleSortTest

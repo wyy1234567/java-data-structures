@@ -2,3 +2,5 @@ sortings/QuickSort.java
  sortings.QuickSort
 sortings/MergeSort.java
  sortings.MergeSort
+sortings/BubbleSort.java
+ sortings.BubbleSort
