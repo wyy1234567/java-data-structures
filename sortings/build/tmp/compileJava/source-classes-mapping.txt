@@ -1,2 +1,4 @@
 sortings/QuickSort.java
  sortings.QuickSort
+sortings/MergeSort.java
+ sortings.MergeSort
